@@ -1,0 +1,25 @@
+if(cin.getText().equals("") | nomComplet.getText().equals("") | sexe.getSelectedItem().toString().equals("") | telephone.getText().equals("") | adresse.getText().equals("") | pays.getText().equals(""))
+            {
+               JOptionPane.showMessageDialog(null,"Veuillez entrer tous les informations correctement!");
+            }
+			else {
+			int result;
+			Class.forName("com.mysql.jdbc.Driver");
+			sql = "INSERT INTO client VALUES ('" + cin.getText() + "','" + nomComplet.getText() + "','"
+					+ sexe.getSelectedItem() + "'," + telephone.getText() + ",'" + adresse.getText() + "','"
+					+ pays.getText() + "');";
+			Connection connection = DriverManager.getConnection(url, "root", "");
+			Statement statement = connection.createStatement();
+			result = statement.executeUpdate(sql);
+			JOptionPane.showMessageDialog(null,"Le client a été ajouté avec succée !");
+			statement.close();
+			connection.close();
+			
+			
+			
+			
+			
+			
+			
+			
+			
